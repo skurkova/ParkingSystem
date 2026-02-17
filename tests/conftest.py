@@ -1,11 +1,13 @@
 import datetime
 
 import pytest
-from module_30_ci_linters.homework.hw1.scr.app import create_app
-from module_30_ci_linters.homework.hw1.scr.models import (Client,
-                                                          ClientParking,
-                                                          Parking)
-from module_30_ci_linters.homework.hw1.scr.models import db as _db
+from scr.app import create_app
+from scr.models import (
+  Client,
+  ClientParking,
+  Parking
+)
+from scr.models import db as _db
 
 
 @pytest.fixture
