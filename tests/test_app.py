@@ -1,8 +1,10 @@
 import pytest
 from faker import Faker
-from module_30_ci_linters.homework.hw1.scr.models import Client, Parking
-from module_30_ci_linters.homework.hw1.tests.factories import (ClientFactory,
-                                                               ParkingFactory)
+from scr.models import Client, Parking
+from tests.factories import (
+  ClientFactory,
+  ParkingFactory
+)
 
 fake = Faker("en_US")
 
