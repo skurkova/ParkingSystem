@@ -1,7 +1,7 @@
 import random
 
 import factory
-from module_30_ci_linters.homework.hw1.scr.models import Client, Parking, db
+from scr.models import Client, Parking, db
 
 
 class ClientFactory(factory.alchemy.SQLAlchemyModelFactory):
