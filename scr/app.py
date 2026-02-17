@@ -2,13 +2,13 @@ import datetime
 
 from faker import Faker
 from flask import Flask, jsonify, request
-from module_30_ci_linters.homework.hw1.scr.models import (
+from scr.models import (
     Client,
     ClientParking,
     Parking,
     db,
 )
-from module_30_ci_linters.homework.hw1.tests.factories import (
+from tests.factories import (
     ClientFactory,
     ParkingFactory,
 )
