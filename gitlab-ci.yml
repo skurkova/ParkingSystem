@@ -39,7 +39,7 @@ isort:
   script:
     - isort --check-only --diff src/
 
-flak8:
+flake8:
   stage: test
   script:
     - flake8 src/
