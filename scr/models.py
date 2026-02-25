@@ -42,9 +42,9 @@ class ClientParking(db.Model):  # type: ignore[name-defined]
 
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("clients.id"), unique=True)
-    parking_id = db.Column(db.Integer, db.ForeignKey("parkings.id"), unique=True)
+    parking_id = db.Column(db.Integer, db.ForeignKey("parkings.id"))
     time_in = db.Column(db.DateTime)
-    time_out = db.Column(db.DateTime)
+    time_out = db.Column(db.DateTime, default=None)
     client = db.relationship("Client", backref="clients_parkings", lazy="joined")
     parking = db.relationship("Parking", backref="clients_parkings", lazy="joined")
 

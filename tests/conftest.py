@@ -50,16 +50,25 @@ def app():
                 count_available_places=0,
             ),
         ]
-        client_parking = ClientParking(
-            id=1,
-            client_id=1,
-            parking_id=1,
-            time_in=datetime.datetime.today(),
-            time_out=None,
-        )
+        client_parking = [
+            ClientParking(
+                id=1,
+                client_id=1,
+                parking_id=1,
+                time_in=datetime.datetime.today(),
+                time_out=None,
+            ),
+            ClientParking(
+                id=2,
+                client_id=2,
+                parking_id=1,
+                time_in=datetime.datetime.today(),
+                time_out=None,
+            ),
+        ]
         _db.session.bulk_save_objects(clients)
         _db.session.bulk_save_objects(parkings)
-        _db.session.add(client_parking)
+        _db.session.bulk_save_objects(client_parking)
         _db.session.commit()
 
         yield _app

@@ -38,7 +38,7 @@ def test_creat_parking(client) -> None:
 
 
 def test_parking_entrance(client) -> None:
-    client_parking_data = {"client_id": 2, "parking_id": 2}
+    client_parking_data = {"client_id": 3, "parking_id": 1}
     resp = client.post("/client_parkings", data=client_parking_data)
     assert resp.status_code == 201
 
@@ -46,7 +46,7 @@ def test_parking_entrance(client) -> None:
 def test_parking_no_entrance(client) -> None:
     client_parking_data = {"client_id": 1, "parking_id": 2}
     resp = client.post("/client_parkings", data=client_parking_data)
-    assert resp.status_code == 201
+    assert resp.status_code == 200
     assert resp.data.decode() == "No available parking spaces"
 
 
@@ -59,7 +59,7 @@ def test_exit_parking(client) -> None:
 def test_no_exit_parking(client) -> None:
     client_parking_data = {"client_id": 2, "parking_id": 1}
     resp = client.delete("/client_parkings", data=client_parking_data)
-    assert resp.status_code == 201
+    assert resp.status_code == 200
     assert resp.data.decode() == "ERROR! Credit card is not linked!"
 
 

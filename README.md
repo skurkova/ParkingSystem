@@ -30,13 +30,13 @@
 
 `cd ParkingSystem`
 ### 2. Создание и активация виртуального окружения
-`python -m venv venv`
+`python3 -m venv venv`
 
 `source venv/bin/activate`
 ### 3. Установка зависимостей
 `pip install -r requirements.txt`
 ### 4. Запуск приложения
-`python scr/app.py`
+` python3 -m scr.app`
 ### 5. Приложение будет доступно по адресу: 
 http://localhost:8080
 
@@ -52,7 +52,7 @@ http://localhost:8080
 
 `GET` `/clients`: Список всех клиентов
 
-`GET` `/clients/<int:client_id>`: Информация о клиенте по ID
+`GET` `/clients/<client_id>`: Информация о клиенте по ID
 
 `POST` `/clients`: Создание нового клиента
 
